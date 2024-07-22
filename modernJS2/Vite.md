@@ -26,3 +26,37 @@
   - 「package.json」ファイルのscriptプロパティのキー("dev"や"build"など)を「npm run ~」の~に入れることで、値の命令が実行される
   - 主に使用するのが「npm run dev」コマンドで、実行するとlocalhost(仮想サーバー)を立ち上げることができる(Live Serverのようなもの)
 16. localhostを止めるときは「⌘ + C」で止まる
+
+### モジュールをインストール
+- JSの「Carouselライブラリ」をインストールする。Viteとnpmを使用すると、ライブラリを個々にダウンロードしなくてもnpmでインストールするだけで使用することが可能になる
+1. ブラウザに表示した時に初期で記述されているViteの部分は不要なため、main.jsファイルの「import javascriptLogo」以下を削除する
+2. スライダーライブラリの「[Splide](https://ja.splidejs.com/)」にアクセスする
+3. 「はじめる」ボタンをクリック
+4. NPMでのインストールをコピー
+5. vite-projectディレクトリ上でコピーしてきたnpmをペーストし、Enterキーを押す
+6. package.jsonにsplideの記述が追加される
+7. node_modulesフォルダにもsplideフォルダが追加される
+8. vite-projectディレクトリ直下のHTMLファイルにスライダーのHTMLを記述
+9. main.jsに「Splideの適用」以下の「import文による導入」部分の記述をコピー&ペーストする
+10. スタイルを当てるためにmain.jsの「new Splide」より上に「バンドラがCSSに対応している場合は〜」の下のimportをコピー＆ペーストする
+11. 状況に応じでカスタマイズする
+
+- sassをインストールする
+1. sassの[npmインストールページ](https://www.npmjs.com/package/sass)にアクセスする
+2. npmでのインストールをコピー
+3. 「npm i sass」(iはinstallの略)コマンドを実行
+4. vite-projectディレクトリの中にscssファイルを作成し、中身を記述
+5. main.js内に「import './ファイル名.scss'」と記述
+6. ブラウザに反映されれば成功
+
+### package.json
+- 設計図みたいなもの
+- 他のエンジニアにコードを渡すとき、「node_modules」ディレクトリを渡すと膨大なデータ量になってしまう
+- package.jsonのあるディレクトリで「npm install」コマンドを入力すれば、package.jsonに記述されているフレームワーク等を読み込んでインストールし、「node_modules」ディレクトリを作成してくれる
+- そのため、他のエンジニアに共有するときはpackage.jsonファイルを渡してインストールしてもらう方が効率的
+- また、「node_modules」ディレクトリがうまく動作しない時も一度「node_modules」フォルダを削除して、「npm install」コマンド実行し、再インストールすると解決することがある
+- importやfrom等を使用すると、npmでインストールしたnode_modulesにあるファイルを読み込むことができる
+
+### npmの検索
+- npmモジュールとして公開されているライブラリは下記のサイトから全て検索できる
+- [Build amazing things](https://www.npmjs.com/)
