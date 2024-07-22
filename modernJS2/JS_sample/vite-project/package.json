@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "vite": "^5.3.4"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "sass": "^1.77.8"
   }
 }
